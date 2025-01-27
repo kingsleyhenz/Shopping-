@@ -10,11 +10,7 @@ module.exports = {
       "./app.{js,ts,vue}",
     ],
     theme: {
-      extend: {
-        backgroundImage: {
-          "hero-image": "./assets/images/hero.jpg"
-        }
-      },
+      extend: {},
     },
     plugins: [],
   };

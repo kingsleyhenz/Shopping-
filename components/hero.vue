@@ -1,18 +1,20 @@
 <template>
-    <div class="w-full h-[350px] flex gap-10 justify-center flex-col items-center">
+    <div class="w-full h-[350px] flex gap-10 justify-center flex-col items-center bg-gray-800 text-white">
         <h1 class="text-7xl font-bold">Shopping Spree</h1>
         <p class="text-lg">ChigiSoft Task Done By Kingsley Henshaw</p>
+        <button class="w-25 h-[50px] bg-gray-900 text-white rounded-md flex justify-center items-center">
+            <svg class="w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+                <path
+                    d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+            </svg>
+        </button>
     </div>
 
-    <div class="w-full h-[30px] bg-amber-400 flex justify-center gap-10 text-zinc-800 text-md">
-        <button>All</button>
-        <button>Cart</button>
-    </div>
 </template>
 
 
 <script>
-    export default {
-        name: "Hero"
-    };
+export default {
+    name: "Hero"
+};
 </script>
