@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar/>
+    <!-- <Navbar/> -->
     <Hero/>
     <Products/>
   </div>
@@ -20,3 +20,4 @@ import Products from './components/products.vue';
     },
   };
 </script>
+
