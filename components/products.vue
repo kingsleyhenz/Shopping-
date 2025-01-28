@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-auto bg-gray-50 p-4 flex flex-wrap gap-10">
+  <div class="w-full h-auto bg-gray-50 p-4 flex flex-wrap justify-center gap-10">
     <div
       v-for="product in products"
       :key="product.id"
@@ -54,6 +54,7 @@ export default {
     return {
       products: [],
       selectedProduct: null,
+      cartItems: []
     };
   },
   methods: {
@@ -84,6 +85,7 @@ export default {
         } else {
           cart.push(updatedProduct);
           localStorage.setItem("cart", JSON.stringify(cart));
+          this.cartItems = cart;
           Toastify({
             text: "Product added to cart.",
             duration: 3000,
@@ -116,6 +118,8 @@ export default {
     } catch (error) {
       console.error("Error fetching products:", error);
     }
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    this.cartItems = cart
   },
 };
 </script>
