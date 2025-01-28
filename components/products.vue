@@ -6,7 +6,7 @@
       class="product-card h-[225px] w-[22%] bg-white rounded-lg p-2 transform transition-all duration-300 ease-in-out hover:scale-105 hover:rotate-3 cursor-pointer border-1 border-gray-200"
       @click="openModal(product)"
     >
-      <img :src="product.image" alt="product image" class="h-[120px] w-full object-contain mb-2" />
+      <img :src="product.image" alt="" class="h-[120px] w-full object-contain mb-2" />
       <h2 class="text-sm font-bold truncate">{{ product.title }}</h2>
       <p class="text-xs text-gray-500">{{ product.category }}</p>
       <p class="text-sm font-semibold text-gray-800 mt-1">
