@@ -1,8 +1,8 @@
 <template>
     <div class="w-full h-[350px] flex gap-10 justify-center flex-col items-center bg-gray-800 text-white relative">
-    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Shopping Spree</h1>
-    <p class="text-sm sm:text-base md:text-lg">ChigiSoft Task Done By Kingsley Henshaw</p>
-    <button @click="toggleCart"
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Shopping Spree</h1>
+        <p class="text-sm sm:text-base md:text-lg">ChigiSoft Task Done By Kingsley Henshaw</p>
+        <button @click="toggleCart"
             class="w-40 h-[50px] bg-gray-900 text-white rounded-md flex items-center justify-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path
@@ -12,7 +12,7 @@
         <div v-if="isCartOpen" @click="toggleCart" class="fixed inset-0 bg-black/50 z-10"></div>
 
         <div class="fixed top-0 right-0 h-full w-[400px] bg-white transform transition-transform z-20 pl-8 sm:pl-5 md:pl-4 sm:w-[400px]"
-            :class="{ 'translate-x-0': isCartOpen, 'translate-x-full': !isCartOpen } ">
+            :class="{ 'translate-x-0': isCartOpen, 'translate-x-full': !isCartOpen }">
             <div class="p-4 flex justify-between items-center border-b">
                 <h2 class="text-lg font-bold text-black">My Cart</h2>
                 <button @click="toggleCart" class="text-gray-500 hover:text-gray-800 transition duration-200">
@@ -67,6 +67,10 @@ export default {
     },
     methods: {
         toggleCart() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            if (cart.length > 0) {
+                this.cartItems = cart;
+            }
             this.isCartOpen = !this.isCartOpen;
         },
         checkout() {
@@ -83,12 +87,6 @@ export default {
                 }).showToast();
             }, 3000);
         },
-    },
-    mounted() {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        if (cart.length > 0) {
-            this.cartItems = cart;
-        }
     },
     watch: {
         cartItems(newCartItems) {
