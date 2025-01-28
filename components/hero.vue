@@ -88,10 +88,5 @@ export default {
             }, 3000);
         },
     },
-    watch: {
-        cartItems(newCartItems) {
-            localStorage.setItem("cart", JSON.stringify(newCartItems));
-        },
-    },
 };
 </script>
