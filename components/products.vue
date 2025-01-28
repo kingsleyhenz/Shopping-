@@ -1,9 +1,9 @@
 <template>
-  <div class="w-full h-auto bg-gray-50 p-4 flex flex-wrap justify-center gap-10">
+  <div class="w-full h-auto bg-gray-50 p-4 flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-10">
     <div
       v-for="product in products"
       :key="product.id"
-      class="product-card h-[225px] w-[22%] bg-white rounded-lg p-2 transform transition-all duration-300 ease-in-out hover:scale-105 hover:rotate-3 cursor-pointer border-1 border-gray-200"
+      class="product-card h-[225px] w-full sm:w-[48%] md:w-[30%] lg:w-[22%] bg-white rounded-lg p-4 transform transition-all duration-300 ease-in-out hover:scale-105 hover:rotate-3 cursor-pointer border border-gray-200"
       @click="openModal(product)"
     >
       <img :src="product.image" alt="" class="h-[120px] w-full object-contain mb-2" />
@@ -42,7 +42,6 @@
   </div>
 </template>
 
-
 <script>
 import axios from "axios";
 import Toastify from "toastify-js";
@@ -76,7 +75,6 @@ export default {
             duration: 3000,
             close: true,
             gravity: "top",
-            // position: "center",
             position: "right",
             style: {
               background: "#f59e0b",
