@@ -11,7 +11,7 @@
         </button>
         <div v-if="isCartOpen" @click="toggleCart" class="fixed inset-0 bg-black/50 z-10"></div>
 
-        <div class="fixed top-0 right-0 h-full w-[400px] bg-white transform transition-transform z-20 pl-4 sm:pl-5 md:pl-2"
+        <div class="fixed top-0 right-0 h-full w-[400px] bg-white transform transition-transform z-20 pl-8 sm:pl-5 md:pl-4 sm:w-[300px]"
             :class="{ 'translate-x-0': isCartOpen, 'translate-x-full': !isCartOpen } ">
             <div class="p-4 flex justify-between items-center border-b">
                 <h2 class="text-lg font-bold text-black">My Cart</h2>
